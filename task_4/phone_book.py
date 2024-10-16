@@ -16,12 +16,4 @@ def show_phone(name: str):
 
 
 def show_all():
-    contacts_items = contacts.items()
-    contacts_count = len(contacts_items)
-    contacts_str = ""
-    for index, (name, phone) in enumerate(contacts_items):
-        contacts_str += f"{name} {phone}"
-        if index < (contacts_count - 1):
-            contacts_str += "\n"
-
-    return contacts_str
+    return "\n".join([f"{name} {phone}" for name, phone in contacts.items()])
